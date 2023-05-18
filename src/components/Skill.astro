@@ -46,10 +46,21 @@ const { title, details, svg } = Astro.props;
 </div>
 
 <style>
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+    99% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
   path {
     stroke-linecap: butt;
+    animation: fade-in 1s forwards;
   }
-
   .wrapper:hover {
     transform: scale(1.02);
   }

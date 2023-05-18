@@ -15,12 +15,12 @@ const { title, date, job, location, achievements, svg } = Astro.props;
 ---
 
 <div
-  class="wrapper grid grid-cols-3 p-5 gap-2 bg-white rounded-md shadow-sm duration-200 transition-all hover:shadow-md"
+  class="wrapper grid grid-cols-1 p-5 gap-2 bg-white rounded-md shadow-sm duration-200 transition-all hover:shadow-md sm:grid-cols-3"
 >
   <div class="col-span-1">
-    <h3 class="flex flex-col font-black">
+    <h3 class="flex justify-between align-bottom font-black sm:flex-col">
       <span class="text-2xl">{title}</span>
-      <span class="text-base">{date}</span>
+      <span class="text-base leading-9 sm:leading-default">{date}</span>
     </h3>
     <svg
       class="absolute top-11 left-4 w-36"
@@ -34,10 +34,11 @@ const { title, date, job, location, achievements, svg } = Astro.props;
         stroke-width="15"
         fill="none"></path>
     </svg>
-    <h4 class="text-muted text-opacity-70 font-black">
-      {job}
-      <br />
-      {location}
+    <h4
+      class="flex justify-between text-muted text-opacity-70 font-black sm:flex-col"
+    >
+      <span>{job}</span>
+      <span>{location}</span>
     </h4>
   </div>
   <ul class="col-span-2 flex flex-col gap-2">
@@ -58,8 +59,20 @@ const { title, date, job, location, achievements, svg } = Astro.props;
 </div>
 
 <style>
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+    99% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
   path {
     stroke-linecap: butt;
+    animation: fade-in 1s forwards;
   }
 
   .wrapper:hover {
