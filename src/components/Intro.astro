@@ -1,0 +1,107 @@
+---
+---
+
+<div class="px-5">
+  <p class="font-black mb-2 greetings before:content-['👋']">
+    Hey, nice to meet you! I'm a front-end engineer living in the sunny south of
+    France.
+  </p><p class="font-black mb-2">
+    With a strong passion for web technologies, I'm actively seeking remote
+    opportunities.
+  </p><p class="font-black mb-2">
+    If you'd like to chat, feel free to send me an <a
+      class="text-primary email-link before:content-['✉️']"
+      href="mailto:clement.chaumel@gmail.com">email</a
+    > or give me a <a
+      class="text-primary phone-link before:content-['📞']"
+      href="tel:+336 01 71 56 30">call</a
+    >!
+  </p>
+</div>
+
+<style>
+  :root {
+    --hand-movement: -5px;
+  }
+
+  @keyframes wave {
+    0% {
+      transform: rotate(0deg);
+    }
+    10% {
+      transform: rotate(14deg) scale(2)
+        translate(var(--hand-movement), var(--hand-movement));
+    }
+    20% {
+      transform: rotate(-8deg) scale(2)
+        translate(var(--hand-movement), var(--hand-movement));
+    }
+    30% {
+      transform: rotate(14deg) scale(2)
+        translate(var(--hand-movement), var(--hand-movement));
+    }
+    40% {
+      transform: rotate(-4deg) scale(2)
+        translate(var(--hand-movement), var(--hand-movement));
+    }
+    50% {
+      transform: rotate(10deg) scale(2)
+        translate(var(--hand-movement), var(--hand-movement));
+    }
+    60% {
+      transform: rotate(0deg) scale(2)
+        translate(var(--hand-movement), var(--hand-movement));
+    } /* Reset for the last half to pause */
+    100% {
+      transform: rotate(0deg) scale(1);
+    }
+  }
+
+  @keyframes ring {
+    0% {
+      transform: rotate(0);
+    }
+    10% {
+      transform: rotate(-25deg);
+    }
+    20% {
+      transform: rotate(25deg);
+    }
+    30% {
+      transform: rotate(-25deg);
+    }
+    40% {
+      transform: rotate(25deg);
+    }
+    50% {
+      transform: rotate(0);
+    }
+    100% {
+      transform: rotate(0);
+    }
+  }
+
+  .greetings::before {
+    display: inline-block;
+    animation: wave 2s ease-in-out 1s forwards;
+  }
+
+  .email-link::before {
+    display: inline-block;
+    margin-right: 1ch;
+    transition: 0.5s ease-in-out transform;
+  }
+
+  .email-link:hover::before {
+    transform: translateX(5px);
+  }
+
+  .phone-link::before {
+    display: inline-block;
+    margin-right: 0.3rem;
+  }
+
+  .phone-link:hover::before {
+    animation: ring 1s linear infinite;
+  }
+</style>
