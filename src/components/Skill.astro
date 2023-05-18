@@ -1,0 +1,70 @@
+---
+export interface Props {
+  title: string;
+  details: string[];
+  svg: {
+    path: string;
+    viewBox: string;
+  };
+}
+
+const { title, details, svg } = Astro.props;
+---
+
+<div
+  class="wrapper relative z-10 flex flex-col p-5 gap-2 bg-white rounded-md shadow-sm duration-200 transition-all hover:shadow-md"
+>
+  <div class="col-span-3">
+    <h3 class="font-black text-lg">
+      {title}
+    </h3>
+    <svg
+      class="absolute top-3 left-2 h-10"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox={svg.viewBox}
+    >
+      <path
+        class="circle transition-all duration-300 ease-in-out"
+        d={svg.path}
+        stroke="#363af8"
+        stroke-width="15"
+        fill="none"></path>
+    </svg>
+  </div>
+  <ul class="w-100">
+    {
+      details.map((details) => (
+        <li class="inline-flex">
+          <p class="bg-accent bg-opacity-40 rounded px-2 py-1 mt-1 text-xs line break-normal transition-colors hover:bg-opacity-80">
+            {details}
+          </p>
+          &nbsp;
+        </li>
+      ))
+    }
+  </ul>
+</div>
+
+<style>
+  path {
+    stroke-linecap: butt;
+  }
+
+  .wrapper:hover {
+    transform: scale(1.02);
+  }
+
+  .wrapper:hover path {
+    stroke-dashoffset: 0 !important;
+  }
+</style>
+
+<script>
+  const paths = document.querySelectorAll("path.circle");
+
+  paths.forEach((path: SVGPathElement) => {
+    const length = path.getTotalLength();
+    path.style.strokeDasharray = length.toString();
+    path.style.strokeDashoffset = length.toString();
+  });
+</script>

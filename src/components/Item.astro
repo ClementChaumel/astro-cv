@@ -5,26 +5,48 @@ export interface Props {
   job: string;
   location: string;
   achievements: string[];
+  svg: {
+    viewBox: string;
+    path: string;
+  };
 }
 
-const { title, date, job, location, achievements } = Astro.props;
+const { title, date, job, location, achievements, svg } = Astro.props;
 ---
 
-<div>
-  <h3 class="text-primary text-xl font-cursive mb-2">
-    {title}
-    {date}
-  </h3>
-  <h4 class="text-muted text-opacity-70 font-cursive mb-3">
-    {job} - {location}
-  </h4>
-  <ul>
+<div
+  class="wrapper grid grid-cols-3 p-5 gap-2 bg-white rounded-md shadow-sm duration-200 transition-all hover:shadow-md"
+>
+  <div class="col-span-1">
+    <h3 class="flex flex-col font-black">
+      <span class="text-2xl">{title}</span>
+      <span class="text-base">{date}</span>
+    </h3>
+    <svg
+      class="absolute top-11 left-4 w-36"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox={svg.viewBox}
+    >
+      <path
+        class="line transition-all duration-300 ease-in-out"
+        d={svg.path}
+        stroke="#363af8"
+        stroke-width="15"
+        fill="none"></path>
+    </svg>
+    <h4 class="text-muted text-opacity-70 font-black">
+      {job}
+      <br />
+      {location}
+    </h4>
+  </div>
+  <ul class="col-span-2 flex flex-col gap-2">
     {
-      achievements.map((achievement) => (
-        <li class="flex gap-2 mb-2">
+      achievements.map((achievement, index) => (
+        <li class="flex gap-2 text-sm">
           <img
-            class="disc w-3 h-3 mt-2"
-            src="/assets/sphere-dynamic-color-small.png"
+            class="disc w-4 h-4 mt-px"
+            src={`/assets/dot${index + 1}.png`}
             alt=""
           />{" "}
           <p>{achievement}</p>
@@ -36,8 +58,25 @@ const { title, date, job, location, achievements } = Astro.props;
 </div>
 
 <style>
-  .disc {
-    filter: hue-rotate(calc(var(--accent-hue) + 10deg))
-      drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.25));
+  path {
+    stroke-linecap: butt;
+  }
+
+  .wrapper:hover {
+    transform: scale(1.02);
+  }
+
+  .wrapper:hover path {
+    stroke-dashoffset: 0 !important;
   }
 </style>
+
+<script>
+  const paths = document.querySelectorAll("path.line");
+
+  paths.forEach((path: SVGPathElement) => {
+    const length = path.getTotalLength();
+    path.style.strokeDasharray = length.toString();
+    path.style.strokeDashoffset = length.toString();
+  });
+</script>

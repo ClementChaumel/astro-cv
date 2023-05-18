@@ -1,11 +1,14 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Intro from "../components/Intro.astro";
-import Item from "../components/Item.astro";
+import Experience from "../components/Experience.astro";
+import Skills from "../components/Skills.astro";
 ---
 
 <Layout title="Welcome to Astro.">
-  <main class="bg-page p-0 mx-auto mt-5 max-w-prose rounded-lg overflow-hidden">
+  <main
+    class="bg-page p-0 mx-auto my-5 max-w-prose rounded-lg overflow-hidden shadow-2xl sm:my-0 sm:shadow-none sm:bg-red"
+  >
     <div class="bg-accent p-5 pb-28 relative">
       <h1 class="text-primary font-cursive text-6xl">Clément Chaumel</h1>
       <h1 class="text-primary font-cursive text-4xl">Senior web engineer</h1>
@@ -15,7 +18,7 @@ import Item from "../components/Item.astro";
 
     <svg
       id="wave"
-      style="transform:translateY(-50px);; transition: 0.3s; margin-top:-1px;"
+      style="transform:translateY(-50px); transition: 0.3s; margin-top:-1px;"
       viewBox="0 0 1440 130"
       version="1.1"
       xmlns="http://www.w3.org/2000/svg"
@@ -31,23 +34,19 @@ import Item from "../components/Item.astro";
         d="M0,78L34.3,67.2C68.6,56,137,35,206,32.5C274.3,30,343,48,411,65C480,82,549,100,617,101.8C685.7,104,754,91,823,73.7C891.4,56,960,35,1029,26C1097.1,17,1166,22,1234,28.2C1302.9,35,1371,43,1440,56.3C1508.6,69,1577,87,1646,91C1714.3,95,1783,87,1851,69.3C1920,52,1989,26,2057,13C2125.7,0,2194,0,2263,10.8C2331.4,22,2400,43,2469,47.7C2537.1,52,2606,39,2674,28.2C2742.9,17,2811,9,2880,8.7C2948.6,9,3017,17,3086,19.5C3154.3,22,3223,17,3291,30.3C3360,43,3429,74,3497,88.8C3565.7,104,3634,104,3703,86.7C3771.4,69,3840,35,3909,19.5C3977.1,4,4046,9,4114,13C4182.9,17,4251,22,4320,23.8C4388.6,26,4457,26,4526,41.2C4594.3,56,4663,87,4731,82.3C4800,78,4869,39,4903,19.5L4937.1,0L4937.1,130L4902.9,130C4868.6,130,4800,130,4731,130C4662.9,130,4594,130,4526,130C4457.1,130,4389,130,4320,130C4251.4,130,4183,130,4114,130C4045.7,130,3977,130,3909,130C3840,130,3771,130,3703,130C3634.3,130,3566,130,3497,130C3428.6,130,3360,130,3291,130C3222.9,130,3154,130,3086,130C3017.1,130,2949,130,2880,130C2811.4,130,2743,130,2674,130C2605.7,130,2537,130,2469,130C2400,130,2331,130,2263,130C2194.3,130,2126,130,2057,130C1988.6,130,1920,130,1851,130C1782.9,130,1714,130,1646,130C1577.1,130,1509,130,1440,130C1371.4,130,1303,130,1234,130C1165.7,130,1097,130,1029,130C960,130,891,130,823,130C754.3,130,686,130,617,130C548.6,130,480,130,411,130C342.9,130,274,130,206,130C137.1,130,69,130,34,130L0,130Z"
       ></path>
     </svg>
-    <Intro />
 
-    <section>
-      <h2 class="text-secondary uppercase font-bold">Experience</h2>
-      <Item
-        title="Canonical"
-        job="Web engineer"
-        location="Remote"
-        date="2020 - Now"
-        achievements={[
-          "Built and maintained an online shop that generated 1M in revenue inits first year.",
-          "Maintained the high traic website ubuntu.com",
-          "Helped move a complex codebase from AngularJS to React",
-          "Hosted regular teambuilding meetings",
-        ]}
-      />
-    </section>
+    <div class="px-5 flex flex-col gap-10 pb-10">
+      <Intro />
+
+      <Skills />
+
+      <Experience />
+
+      <p class="font-black">
+        I also went to school and have a Master's degree in software development
+        from the fantastic Université Paul Sabatier! 🧑‍🎓
+      </p>
+    </div>
 
     <style>
       :root {
