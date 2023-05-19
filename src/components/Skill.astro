@@ -6,15 +6,16 @@ export interface Props {
     path: string;
     viewBox: string;
   };
+  emoji: string;
 }
 
-const { title, details, svg } = Astro.props;
+const { title, details, svg, emoji } = Astro.props;
 ---
 
 <div
   class="wrapper relative z-10 flex flex-col p-5 gap-2 bg-white rounded-md shadow-sm duration-200 transition-all hover:shadow-md"
 >
-  <div class="col-span-3">
+  <div class="col-span-3 flex justify-between">
     <h3 class="font-black text-lg">
       {title}
     </h3>
@@ -30,6 +31,7 @@ const { title, details, svg } = Astro.props;
         stroke-width="15"
         fill="none"></path>
     </svg>
+    <span>{emoji}</span>
   </div>
   <ul class="w-100">
     {
