@@ -2,7 +2,8 @@
 ---
 
 <div class="px-5">
-  <p class="font-black mb-2 greetings before:content-['👋']">
+  <p class="font-black mb-2">
+    <span class="greetings transition-transform"><i>👋</i></span>
     Hey, nice to meet you!
   </p><p class="font-black mb-2">
     I'm a front-end engineer living in the sunny south of France.
@@ -52,7 +53,7 @@
     60% {
       transform: rotate(0deg) scale(2)
         translate(var(--hand-movement), var(--hand-movement));
-    } /* Reset for the last half to pause */
+    }
     100% {
       transform: rotate(0deg) scale(1);
     }
@@ -82,9 +83,22 @@
     }
   }
 
-  .greetings::before {
+  .greetings i {
     display: inline-block;
-    animation: wave 2s ease-in-out 1s forwards;
+    font-style: normal;
+    animation: wave 2s ease-in-out 1s 1 forwards;
+  }
+  .greetings {
+    display: inline-block;
+    cursor: grab;
+    user-select: none;
+  }
+
+  .greetings:hover {
+    transform: scale(1.4);
+  }
+  .greetings:active {
+    transform: scale(1.8);
   }
 
   .email-link::before {
@@ -106,3 +120,14 @@
     animation: ring 1s linear infinite;
   }
 </style>
+
+<script>
+  const greetings = document.querySelector(".greetings");
+
+  greetings.addEventListener("mousedown", () => {
+    // random between 1 and 5
+    const random = Math.floor(Math.random() * 5) + 1;
+    const audio = new Audio(`/sounds/clap${random}.mp3`);
+    audio.play();
+  });
+</script>
