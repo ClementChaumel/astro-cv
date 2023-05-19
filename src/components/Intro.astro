@@ -125,7 +125,6 @@
   const greetings = document.querySelector(".greetings");
 
   greetings.addEventListener("mousedown", () => {
-    // random between 1 and 5
     const random = Math.floor(Math.random() * 5) + 1;
     const audio = new Audio(`/sounds/clap${random}.mp3`);
     audio.play();
