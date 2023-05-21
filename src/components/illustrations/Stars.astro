@@ -59,12 +59,17 @@
     }
   }
   .star-wrapper {
-    top: 50%;
-    left: 50%;
+    top: 70%;
+    left: 60%;
     z-index: 40;
     transform: translate(-50%, -50%);
     animation: var(--animation-duration) ease-in-out forwards star-disappear;
     animation-delay: var(--animation-delay);
+
+    @media screen and (min-width: 640px) {
+      top: 50%;
+      left: 50%;
+    }
   }
 
   .dark .star-wrapper {

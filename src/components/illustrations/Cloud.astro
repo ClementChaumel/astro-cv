@@ -73,12 +73,17 @@
   }
 
   .cloud-wrapper {
-    top: 60%;
-    left: -10%;
+    top: 70%;
+    left: -17%;
     filter: brightness(1.2) var(--drop-shadow-l);
     animation: var(--animation-duration) ease-in-out forwards cloud-appear;
     animation-delay: var(--animation-delay);
     z-index: 40;
+
+    @media screen and (min-width: 640px) {
+      top: 60%;
+      left: -10%;
+    }
   }
 
   .dark .cloud-wrapper {

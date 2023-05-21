@@ -59,7 +59,11 @@
   .sun-and-moon-container {
     position: relative;
     z-index: 10;
-    transform: translate(20rem, -37rem);
+    transform: translate(12rem, -28rem);
+
+    @media screen and (min-width: 640px) {
+      transform: translate(20rem, -37rem);
+    }
   }
 
   .dark .sun-and-moon-wrapper {
