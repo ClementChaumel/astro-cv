@@ -1,0 +1,87 @@
+---
+---
+
+<div class="absolute cloud-wrapper">
+  <img class="cloud" src="/images/heart-dynamic-clay.png" alt="" />
+</div>
+
+<style is:global>
+  @keyframes wobble {
+    0% {
+      transform: rotate(44deg);
+    }
+    25% {
+      transform: rotate(56deg);
+    }
+    50% {
+      transform: rotate(44deg);
+    }
+    75% {
+      transform: rotate(56deg);
+    }
+    100% {
+      transform: rotate(44deg);
+    }
+  }
+
+  @keyframes cloud-appear {
+    0% {
+      transform: translateY(300px);
+      z-index: 0;
+    }
+    49% {
+      z-index: 0;
+    }
+    50% {
+      transform: translateY(-150px);
+      z-index: 40;
+    }
+    80% {
+      transform: translateY(20px);
+      z-index: 40;
+    }
+    100% {
+      transform: translateY(0);
+      z-index: 40;
+    }
+  }
+  @keyframes cloud-disappear {
+    0% {
+      transform: translateY(0);
+      z-index: 40;
+    }
+    20% {
+      transform: translateY(20px);
+      z-index: 40;
+    }
+    50% {
+      transform: translateY(-150px);
+      z-index: 40;
+    }
+    51% {
+      z-index: 0;
+    }
+    100% {
+      transform: translateY(300px);
+      z-index: 0;
+    }
+  }
+
+  .cloud {
+    animation: 5s ease-in-out infinite wobble;
+    max-height: 10rem;
+  }
+
+  .cloud-wrapper {
+    top: 60%;
+    left: -10%;
+    filter: brightness(1.2) var(--drop-shadow-l);
+    animation: var(--animation-duration) ease-in-out forwards cloud-appear;
+    animation-delay: var(--animation-delay);
+    z-index: 40;
+  }
+
+  .dark .cloud-wrapper {
+    animation-name: cloud-disappear;
+  }
+</style>

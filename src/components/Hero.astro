@@ -1,93 +1,32 @@
 ---
+import Cloud from "./illustrations/Cloud.astro";
+import Stars from "./illustrations/Stars.astro";
+import SunAndMoon from "./illustrations/SunAndMoon.astro";
 ---
 
-<div class="bg-accent p-5 pb-28 relative">
-  <h1 class="text-primary font-cursive text-6xl">Clément Chaumel</h1>
-  <h1 class="text-primary font-cursive text-4xl">Senior web engineer</h1>
-  <img class="absolute cloud" src="/images/heart-dynamic-clay.png" alt="" />
-  <img class="absolute sun" src="/images/sun-dynamic-color.png" alt="" />
+<div class="bg-accent transition-colors">
+  <div class="p-5 pb-16 relative">
+    <h1 class="relative text-primary font-cursive text-6xl z-50">
+      Clément Chaumel
+    </h1>
+    <h1 class="relative text-primary font-cursive text-4xl z-50">
+      Senior web engineer
+    </h1>
+    <Cloud />
+    <SunAndMoon />
+    <Stars />
+  </div>
+
+  <svg
+    id="wave"
+    class="z-20 relative"
+    style="height: 3.3rem;"
+    viewBox="0 0 1440 130"
+    version="1.1"
+    xmlns="http://www.w3.org/2000/svg"
+    ><path
+      class="transition-colors fill-page"
+      d="M0,78L34.3,67.2C68.6,56,137,35,206,32.5C274.3,30,343,48,411,65C480,82,549,100,617,101.8C685.7,104,754,91,823,73.7C891.4,56,960,35,1029,26C1097.1,17,1166,22,1234,28.2C1302.9,35,1371,43,1440,56.3C1508.6,69,1577,87,1646,91C1714.3,95,1783,87,1851,69.3C1920,52,1989,26,2057,13C2125.7,0,2194,0,2263,10.8C2331.4,22,2400,43,2469,47.7C2537.1,52,2606,39,2674,28.2C2742.9,17,2811,9,2880,8.7C2948.6,9,3017,17,3086,19.5C3154.3,22,3223,17,3291,30.3C3360,43,3429,74,3497,88.8C3565.7,104,3634,104,3703,86.7C3771.4,69,3840,35,3909,19.5C3977.1,4,4046,9,4114,13C4182.9,17,4251,22,4320,23.8C4388.6,26,4457,26,4526,41.2C4594.3,56,4663,87,4731,82.3C4800,78,4869,39,4903,19.5L4937.1,0L4937.1,130L4902.9,130C4868.6,130,4800,130,4731,130C4662.9,130,4594,130,4526,130C4457.1,130,4389,130,4320,130C4251.4,130,4183,130,4114,130C4045.7,130,3977,130,3909,130C3840,130,3771,130,3703,130C3634.3,130,3566,130,3497,130C3428.6,130,3360,130,3291,130C3222.9,130,3154,130,3086,130C3017.1,130,2949,130,2880,130C2811.4,130,2743,130,2674,130C2605.7,130,2537,130,2469,130C2400,130,2331,130,2263,130C2194.3,130,2126,130,2057,130C1988.6,130,1920,130,1851,130C1782.9,130,1714,130,1646,130C1577.1,130,1509,130,1440,130C1371.4,130,1303,130,1234,130C1165.7,130,1097,130,1029,130C960,130,891,130,823,130C754.3,130,686,130,617,130C548.6,130,480,130,411,130C342.9,130,274,130,206,130C137.1,130,69,130,34,130L0,130Z"
+    ></path>
+  </svg>
 </div>
-
-<svg
-  id="wave"
-  style="height: 3.3rem; transform: translateY(-3.3rem); transition: 0.3s; margin-top: 1px;"
-  viewBox="0 0 1440 130"
-  version="1.1"
-  xmlns="http://www.w3.org/2000/svg"
-  ><defs
-    ><linearGradient id="sw-gradient-0" x1="0" x2="0" y1="1" y2="0"
-      ><stop stop-color="hsl(var(--color-page-bg))" offset="0%"></stop><stop
-        stop-color="hsl(var(--color-page-bg))"
-        offset="100%"></stop></linearGradient
-    ></defs
-  ><path
-    style="transform:translate(0, 0px); opacity:1"
-    fill="url(#sw-gradient-0)"
-    d="M0,78L34.3,67.2C68.6,56,137,35,206,32.5C274.3,30,343,48,411,65C480,82,549,100,617,101.8C685.7,104,754,91,823,73.7C891.4,56,960,35,1029,26C1097.1,17,1166,22,1234,28.2C1302.9,35,1371,43,1440,56.3C1508.6,69,1577,87,1646,91C1714.3,95,1783,87,1851,69.3C1920,52,1989,26,2057,13C2125.7,0,2194,0,2263,10.8C2331.4,22,2400,43,2469,47.7C2537.1,52,2606,39,2674,28.2C2742.9,17,2811,9,2880,8.7C2948.6,9,3017,17,3086,19.5C3154.3,22,3223,17,3291,30.3C3360,43,3429,74,3497,88.8C3565.7,104,3634,104,3703,86.7C3771.4,69,3840,35,3909,19.5C3977.1,4,4046,9,4114,13C4182.9,17,4251,22,4320,23.8C4388.6,26,4457,26,4526,41.2C4594.3,56,4663,87,4731,82.3C4800,78,4869,39,4903,19.5L4937.1,0L4937.1,130L4902.9,130C4868.6,130,4800,130,4731,130C4662.9,130,4594,130,4526,130C4457.1,130,4389,130,4320,130C4251.4,130,4183,130,4114,130C4045.7,130,3977,130,3909,130C3840,130,3771,130,3703,130C3634.3,130,3566,130,3497,130C3428.6,130,3360,130,3291,130C3222.9,130,3154,130,3086,130C3017.1,130,2949,130,2880,130C2811.4,130,2743,130,2674,130C2605.7,130,2537,130,2469,130C2400,130,2331,130,2263,130C2194.3,130,2126,130,2057,130C1988.6,130,1920,130,1851,130C1782.9,130,1714,130,1646,130C1577.1,130,1509,130,1440,130C1371.4,130,1303,130,1234,130C1165.7,130,1097,130,1029,130C960,130,891,130,823,130C754.3,130,686,130,617,130C548.6,130,480,130,411,130C342.9,130,274,130,206,130C137.1,130,69,130,34,130L0,130Z"
-  ></path>
-</svg>
-
-<style>
-  :root {
-    --drop-shadow-l: drop-shadow(20px 10px 2.75rem rgba(0, 0, 0, 0.2));
-  }
-
-  @keyframes wobble {
-    0% {
-      transform: scale(0.3) rotate(51deg);
-    }
-    25% {
-      transform: scale(0.3) rotate(56deg);
-    }
-    50% {
-    }
-    75% {
-      transform: scale(0.3) rotate(43deg);
-    }
-    100% {
-      transform: scale(0.3) rotate(51deg);
-    }
-  }
-
-  @keyframes disappear {
-    0% {
-      transform: scale(0.3) rotate(51deg) translate(0);
-    }
-    50% {
-      transform: scale(0.3) rotate(51deg) translate(-150px, -150px);
-      z-index: 0;
-    }
-    100% {
-      transform: scale(0.3) rotate(51deg) translate(250px, 250px);
-      z-index: 0;
-    }
-  }
-
-  .cloud {
-    filter: brightness(1.2) var(--drop-shadow-l);
-    z-index: 99;
-    animation: 8s linear infinite wobble;
-    left: -46%;
-    top: 30%;
-
-    @media screen and (min-width: 640px) {
-      top: -6rem;
-      left: -16.5rem;
-    }
-  }
-  .sun {
-    top: -50%;
-    transform: scale(0.45) rotate(51deg);
-    filter: brightness(1.2) var(--drop-shadow-l);
-    left: 50%;
-    transition: transform 1s ease-in-out;
-
-    @media screen and (min-width: 640px) {
-      left: 16.5rem;
-      top: -16.5rem;
-    }
-  }
-  .sun:hover {
-    transform: scale(0.5) rotate(48deg);
-  }
-</style>

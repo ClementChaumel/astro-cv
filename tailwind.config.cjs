@@ -1,9 +1,11 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
+  darkMode: "class",
   theme: {
     colors: {
-      white: "#ffffff",
+      white: "hsl(var(--color-white-bg) / <alpha-value>)",
+      black: "hsl(var(--color-black) / <alpha-value>)",
       primary: "hsl(var(--color-primary) / <alpha-value>)",
       secondary: "hsl(var(--color-secondary) / <alpha-value>)",
       accent: "hsl(var(--color-accent-bg) / <alpha-value>)",

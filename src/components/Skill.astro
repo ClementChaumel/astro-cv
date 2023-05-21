@@ -37,7 +37,7 @@ const { title, details, svg, emoji } = Astro.props;
     {
       details.map((details) => (
         <li class="inline-flex">
-          <p class="bg-accent bg-opacity-40 rounded px-2 py-1 mt-1 text-xs line break-normal transition-colors hover:bg-opacity-80">
+          <p class="bg-accent bg-opacity-40 rounded px-2 py-1 mt-1 text-xs line break-normal transition-colors hover:bg-opacity-80 dark:bg-muted dark:bg-opacity-20 dark:hover:bg-opacity-40">
             {details}
           </p>
           &nbsp;
@@ -65,10 +65,10 @@ const { title, details, svg, emoji } = Astro.props;
   }
   .wrapper:hover {
     transform: scale(1.02);
-  }
 
-  .wrapper:hover path {
-    stroke-dashoffset: 0 !important;
+    path {
+      stroke-dashoffset: 0 !important;
+    }
   }
 </style>
 

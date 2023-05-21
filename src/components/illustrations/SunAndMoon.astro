@@ -1,0 +1,71 @@
+---
+---
+
+<div class="sun-and-moon-container absolute">
+  <div class="sun-and-moon-wrapper flex flex-col gap-36">
+    <img class="sun" src="/images/sun-dynamic-color.png" alt="" />
+    <img class="moon" src="/images/moon-dynamic-color.png" alt="" />
+  </div>
+</div>
+
+<style is:global>
+  @keyframes disappear-sun {
+    0% {
+      transform: rotate(-45deg) translateY(0) scale(0.45);
+    }
+    20% {
+      transform: rotate(-55deg) translateY(0) scale(0.45);
+    }
+    80% {
+      transform: rotate(121deg) translateY(0) scale(0.45);
+    }
+    100% {
+      transform: rotate(111deg) translateY(0) scale(0.45);
+    }
+  }
+  @keyframes appear-sun {
+    0% {
+      transform: rotate(111deg) translateY(0) scale(0.45);
+    }
+    20% {
+      transform: rotate(121deg) translateY(0) scale(0.45);
+    }
+    80% {
+      transform: rotate(-55deg) translateY(0) scale(0.45);
+    }
+    100% {
+      transform: rotate(-45deg) translateY(0) scale(0.45);
+    }
+  }
+  .sun-and-moon-wrapper {
+    top: -50%;
+    left: 50%;
+    transform: rotate(-45deg) scale(0.45);
+    animation: appear-sun var(--animation-duration) ease-in-out forwards;
+    animation-delay: var(--animation-delay);
+  }
+
+  .sun {
+    filter: brightness(1.2) var(--drop-shadow-l);
+    transform: translate(7rem, 2rem) scale(1.2);
+  }
+
+  .moon {
+    transform: scaleY(-1) rotate(-75deg) scale(0.8) translateX(-7rem);
+    filter: brightness(1.2) sepia(1)
+      drop-shadow(0px 0px 160px hsla(0, 0%, 100%, 0.8));
+  }
+
+  .sun-and-moon-container {
+    position: relative;
+    z-index: 10;
+    transform: translate(20rem, -37rem);
+  }
+
+  .dark .sun-and-moon-wrapper {
+    animation-name: disappear-sun;
+  }
+
+  @media screen and (min-width: 640px) {
+  }
+</style>

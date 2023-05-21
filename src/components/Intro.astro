@@ -12,10 +12,10 @@
     opportunities.
   </p><p class="font-black mb-2">
     Feel free to send me an <a
-      class="text-primary email-link before:content-['✉️']"
+      class="text-primary email-link before:content-['✉️'] hover:underline"
       href="mailto:clement.chaumel@gmail.com">email</a
     > or give me a <a
-      class="text-primary phone-link before:content-['📞']"
+      class="text-primary phone-link before:content-['📞'] hover:underline"
       href="tel:+336 01 71 56 30">call</a
     >!
   </p>
@@ -83,41 +83,47 @@
     }
   }
 
-  .greetings i {
-    display: inline-block;
-    font-style: normal;
-    animation: wave 2s ease-in-out 1s 1 forwards;
-  }
   .greetings {
     display: inline-block;
     cursor: grab;
     user-select: none;
+
+    > i {
+      display: inline-block;
+      font-style: normal;
+      animation: wave 2s ease-in-out 1s 1 forwards;
+    }
+
+    &:hover {
+      transform: scale(1.4);
+    }
+
+    &:active {
+      transform: scale(1.8);
+    }
   }
 
-  .greetings:hover {
-    transform: scale(1.4);
-  }
-  .greetings:active {
-    transform: scale(1.8);
+  .email-link {
+    &::before {
+      display: inline-block;
+      margin-right: 1ch;
+      transition: 0.5s ease-in-out transform;
+    }
+
+    &:hover::before {
+      transform: translateX(5px);
+    }
   }
 
-  .email-link::before {
-    display: inline-block;
-    margin-right: 1ch;
-    transition: 0.5s ease-in-out transform;
-  }
+  .phone-link {
+    &::before {
+      display: inline-block;
+      margin-right: 0.3rem;
+    }
 
-  .email-link:hover::before {
-    transform: translateX(5px);
-  }
-
-  .phone-link::before {
-    display: inline-block;
-    margin-right: 0.3rem;
-  }
-
-  .phone-link:hover::before {
-    animation: ring 1s linear infinite;
+    &:hover::before {
+      animation: ring 1s linear infinite;
+    }
   }
 </style>
 

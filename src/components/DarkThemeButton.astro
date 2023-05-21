@@ -1,0 +1,24 @@
+---
+---
+
+<button class="fixed text-6xl drop-shadow-xl rounded-full bottom-8 right-8 z-50"
+  >🌞</button
+>
+
+<script>
+  const button = document.querySelector("button");
+  const html = document.querySelector("html");
+  const r = document.querySelector(":root");
+
+  button.addEventListener("click", () => {
+    html.classList.toggle("dark");
+    r.style.setProperty("--animation-delay", "0s");
+
+    // change button content to 🌞 or 🌚
+    if (html.classList.contains("dark")) {
+      button.textContent = "🌚";
+    } else {
+      button.textContent = "🌞";
+    }
+  });
+</script>

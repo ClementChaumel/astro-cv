@@ -17,13 +17,13 @@ const { title, date, job, location, achievements, svg } = Astro.props;
 <div
   class="wrapper grid grid-cols-1 p-5 gap-2 bg-white rounded-md shadow-sm duration-200 transition-all hover:shadow-md sm:grid-cols-3"
 >
-  <div class="col-span-1">
+  <div class="col-span-1 relative">
     <h3 class="flex justify-between align-bottom font-black sm:flex-col">
       <span class="text-2xl">{title}</span>
       <span class="text-base leading-9 sm:leading-default">{date}</span>
     </h3>
     <svg
-      class="absolute top-11 left-4 w-36"
+      class="absolute top-6 -left-1 w-36"
       xmlns="http://www.w3.org/2000/svg"
       viewBox={svg.viewBox}
     >
@@ -77,10 +77,10 @@ const { title, date, job, location, achievements, svg } = Astro.props;
 
   .wrapper:hover {
     transform: scale(1.02);
-  }
 
-  .wrapper:hover path {
-    stroke-dashoffset: 0 !important;
+    path {
+      stroke-dashoffset: 0 !important;
+    }
   }
 </style>
 

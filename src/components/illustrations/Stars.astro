@@ -1,0 +1,73 @@
+---
+---
+
+<div class="absolute star-wrapper">
+  <img class="star" src="/images/star-dynamic-clay.png" alt="" />
+  <img class="star" src="/images/star-dynamic-clay.png" alt="" />
+</div>
+
+<style is:global>
+  @keyframes rotate-stars {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes star-appear {
+    0% {
+      transform: translate(-50%, -250%);
+    }
+    80% {
+      transform: translate(-50%, -40%);
+    }
+    100% {
+      transform: translate(-50%, -50%);
+    }
+  }
+  @keyframes star-disappear {
+    0% {
+      transform: translate(-50%, -50%);
+    }
+    20% {
+      transform: translate(-50%, -40%);
+    }
+    100% {
+      transform: translate(-50%, -250%);
+    }
+  }
+  .star {
+    position: relative;
+    animation: rotate-stars linear infinite;
+    filter: brightness(1.2) sepia(1) drop-shadow(0px 0px 10px white);
+
+    &:nth-child(1) {
+      max-height: 6rem;
+      animation-duration: 50s;
+      left: -9rem;
+      top: 7rem;
+    }
+
+    &:nth-child(2) {
+      max-height: 4rem;
+      animation-duration: 40s;
+      animation-direction: reverse;
+      left: 2rem;
+      top: 0rem;
+    }
+  }
+  .star-wrapper {
+    top: 50%;
+    left: 50%;
+    z-index: 40;
+    transform: translate(-50%, -50%);
+    animation: var(--animation-duration) ease-in-out forwards star-disappear;
+    animation-delay: var(--animation-delay);
+  }
+
+  .dark .star-wrapper {
+    animation-name: star-appear;
+  }
+</style>
