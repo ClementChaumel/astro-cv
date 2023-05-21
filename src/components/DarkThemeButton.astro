@@ -9,6 +9,8 @@
   const button = document.querySelector("button");
   const html = document.querySelector("html");
   const r = document.querySelector(":root");
+  const link = document.querySelector("link[rel~='icon']");
+  const title = document.querySelector("title");
 
   button.addEventListener("click", () => {
     html.classList.toggle("dark");
@@ -17,8 +19,12 @@
     // change button content to 🌞 or 🌚
     if (html.classList.contains("dark")) {
       button.textContent = "🌚";
+      link.href = "/favicon-moon.png";
+      title.textContent = "🌟 CV Clément Chaumel 🌟";
     } else {
       button.textContent = "🌞";
+      link.href = "/favicon-sun.png";
+      title.textContent = "🌥️ CV Clément Chaumel 🌥️";
     }
   });
 </script>
