@@ -21,10 +21,25 @@ const svgs = [
   <h2 class="text-xl font-black px-5 mb-4">I worked at:</h2>
   <div class="flex flex-col gap-4">
     <Item
+      title="Carbo"
+      job="Lead frontend engineer"
+      location="Remote"
+      date="2023 - Now"
+      achievements={[
+        "Led the end-to-end development of a new vertical, from architecture and project bootstrapping to delivery, ensuring a robust, scalable front-end stack.",
+        "Mentored and managed front-end developers, providing technical guidance and code reviews to raise quality and consistencyacross the team.",
+        "Spearheaded the creation of a front-end design system and component library, defining tokens, components, patterns and documentation to streamline UI implementation.",
+        "Set up CI pipelines and processes around the design system, improving reliability, reusability and speed of shipping new interfaces.",
+        "Collaborated closely with cross-functional stakeholders to align front-end implementation with product and business goals.",
+      ]}
+      svg={svgs[2]}
+      svgExtraStyle="transform: scale(0.7); transform-origin: left;"
+    />
+    <Item
       title="Canonical"
       job="Web engineer"
       location="Remote"
-      date="2020 - Now"
+      date="2020 - 2023"
       achievements={[
         "Developed and managed a highly successful online shop, which achieved an impressive revenue of 1 million within its inaugural year.",
         "Maintained the website ubuntu.com, a high-traffic platform, ensuring its smooth operation and availability for users.",
